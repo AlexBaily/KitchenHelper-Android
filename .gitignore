@@ -12,3 +12,15 @@
 /captures
 .externalNativeBuild
 .cxx
+/_windows
+/codestyles
+androidStudioFirstRun.xml
+colors.scheme.xml
+debugger.xml
+editor.xml
+filetypes.xml
+github.xml
+notifications.xml
+project.default.xml
+ui.lnf.xml
+wsl.distributions.xml
