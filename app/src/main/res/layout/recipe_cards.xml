@@ -16,11 +16,20 @@
         android:layout_height="wrap_content"
         >
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipe_image"
+            android:maxHeight="100dp"
+            android:adjustViewBounds="true">
+        </ImageView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recipe_name"
             android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/recipe_image"
             android:textSize="30sp"
             />
 
@@ -29,6 +38,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/recipe_description"
             android:layout_below="@+id/recipe_name"
+            android:layout_toRightOf="@+id/recipe_image"
             />
+
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -8,13 +8,15 @@ public class Recipe {
     private int mRecipeId;
     private String mRecipeName;
     private String mRecipeDescription;
+    private String mImageName;
     private ArrayList<Ingredient> mRecipeList;
     private ArrayList<RecipeStep> mRecipeSteps;
 
 
-    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription) {
+    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, String mImageName) {
         this.mRecipeId = mRecipeId;
         this.mRecipeName = mRecipeName;
+        this.mImageName = mImageName;
         this.mRecipeDescription = mRecipeDescription;
         this.mRecipeList = new ArrayList<Ingredient>();
         this.mRecipeSteps = new ArrayList<RecipeStep>();
@@ -51,4 +53,9 @@ public class Recipe {
     public void setmRecipeDescription(String mRecipeDescription) {
         this.mRecipeDescription = mRecipeDescription;
     }
+
+    public String getmImageName() {
+        return mImageName;
+    }
+
 }

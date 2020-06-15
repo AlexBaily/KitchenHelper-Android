@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         Ingredient newIngredient = new Ingredient(0, "Flour", "500", "g");
-        Recipe newRecipe = new Recipe(0, "Cookies", "Delicious Cookies");
+        Recipe newRecipe = new Recipe(0, "Cookies", "Delicious Cookies", "brownie");
         newRecipe.AddIngredient(newIngredient);
         mUser.AddRecipe(newRecipe);
 
