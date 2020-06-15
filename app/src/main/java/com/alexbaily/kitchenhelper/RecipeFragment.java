@@ -37,13 +37,13 @@ public class RecipeFragment extends Fragment  {
 
         //Create some ingredients and recipes to test card creation
         Ingredient newIngredient = new Ingredient(0, "Flour", "500", "g");
-        Recipe newRecipe = new Recipe(0, "Cookies", "Declicious Cookies", "brownie");
+        Recipe newRecipe = new Recipe(0, "Cookies", "Declicious Cookies", R.drawable.cookies);
         newRecipe.AddIngredient(newIngredient);
         mUser.AddRecipe(newRecipe);
 
         //2
         Ingredient newIngredient2 = new Ingredient(0, "Flour", "500", "g");
-        Recipe newRecipe2 = new Recipe(0, "Brownies", "Declicious Brownies", "brownie");
+        Recipe newRecipe2 = new Recipe(0, "Brownies", "Declicious Brownies", R.drawable.brownie);
         newRecipe2.AddIngredient(newIngredient2);
         mUser.AddRecipe(newRecipe2);
 

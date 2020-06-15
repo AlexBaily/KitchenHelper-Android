@@ -24,10 +24,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Ingredient newIngredient = new Ingredient(0, "Flour", "500", "g");
-        Recipe newRecipe = new Recipe(0, "Cookies", "Delicious Cookies", "brownie");
-        newRecipe.AddIngredient(newIngredient);
-        mUser.AddRecipe(newRecipe);
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);

@@ -1,4 +1,6 @@
 package com.alexbaily.kitchenhelper;
+import android.graphics.drawable.Drawable;
+
 import java.util.ArrayList;
 
 
@@ -8,12 +10,12 @@ public class Recipe {
     private int mRecipeId;
     private String mRecipeName;
     private String mRecipeDescription;
-    private String mImageName;
+    private int mImageName;
     private ArrayList<Ingredient> mRecipeList;
     private ArrayList<RecipeStep> mRecipeSteps;
 
 
-    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, String mImageName) {
+    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, int mImageName) {
         this.mRecipeId = mRecipeId;
         this.mRecipeName = mRecipeName;
         this.mImageName = mImageName;
@@ -54,7 +56,7 @@ public class Recipe {
         this.mRecipeDescription = mRecipeDescription;
     }
 
-    public String getmImageName() {
+    public int getmImageName() {
         return mImageName;
     }
 
