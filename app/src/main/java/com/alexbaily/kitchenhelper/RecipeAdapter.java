@@ -1,10 +1,12 @@
 package com.alexbaily.kitchenhelper;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -30,6 +32,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             textView = v.findViewById(R.id.recipe_name);
             recipeDescView = v.findViewById(R.id.recipe_description);
             recipeImageView = v.findViewById(R.id.recipe_image);
+
+            v.setOnClickListener(new CardView.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(), "You Clicked!", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
