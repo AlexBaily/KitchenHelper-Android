@@ -34,6 +34,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         public TextView recipeDescView;
         public ImageView recipeImageView;
         public OnItemClickListener mListener;
+        public Recipe recipe;
         public RecipeViewHolder(CardView v, OnItemClickListener listener) {
             super(v);
 
@@ -47,7 +48,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         @Override
         public void onClick(View view) {
-            mListener.onClick(view, getAdapterPosition());
+            mListener.onClick(view, getAdapterPosition(), recipe);
         }
     }
 
@@ -78,6 +79,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         holder.textView.setText(recipe.getmRecipeName());
         holder.recipeDescView.setText(recipe.getmRecipeDescription());
         holder.recipeImageView.setImageResource(recipe.getmImageName());
+        holder.recipe = recipe;
 
 
     }
