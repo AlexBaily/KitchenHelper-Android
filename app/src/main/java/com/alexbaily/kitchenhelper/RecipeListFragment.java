@@ -66,6 +66,7 @@ public class RecipeListFragment extends Fragment  {
 
         OnItemClickListener listener = (view, position, recipe) -> {
             Intent intent = new Intent(getActivity(), RecipeActivity.class);
+            intent.putExtra("EXTRA_RECIPE", recipe);
             startActivity(intent);
         };
         // specify an adapter (see also next example)

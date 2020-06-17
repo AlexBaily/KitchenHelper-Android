@@ -1,7 +1,9 @@
 package com.alexbaily.kitchenhelper;
 
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
     private int mIngredientId;
     private String mIngredientName;
     private String mIngredientQuantity;

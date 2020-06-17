@@ -1,11 +1,12 @@
 package com.alexbaily.kitchenhelper;
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 
-public class Recipe {
+public class Recipe implements Serializable {
 
     private int mRecipeId;
     private String mRecipeName;
