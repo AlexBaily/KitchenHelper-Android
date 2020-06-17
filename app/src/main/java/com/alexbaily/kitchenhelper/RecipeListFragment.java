@@ -1,6 +1,7 @@
 package com.alexbaily.kitchenhelper;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,9 +65,8 @@ public class RecipeListFragment extends Fragment  {
 
 
         OnItemClickListener listener = (view, position) -> {
-            Fragment recipeFragment = new RecipeFragment();
-            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-            transaction.add(R.id.recipe_fragment_container, recipeFragment).commit();
+            Intent intent = new Intent(getActivity(), RecipeActivity.class);
+            startActivity(intent);
         };
         // specify an adapter (see also next example)
         mAdapter = new RecipeAdapter(mUser.GetRecipes(), listener);
