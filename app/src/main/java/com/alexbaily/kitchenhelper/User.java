@@ -15,4 +15,8 @@ public class User {
     public void AddRecipe(Recipe recipe) {
         mRecipes.add(recipe);
     }
+
+    public ArrayList<Recipe> GetRecipes() {
+        return mRecipes;
+    }
 }
