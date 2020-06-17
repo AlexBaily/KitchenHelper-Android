@@ -9,41 +9,51 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
+
+
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
     private ArrayList<Recipe> mDataset;
+    private OnItemClickListener mListener;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class RecipeViewHolder extends RecyclerView.ViewHolder {
+    public static class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
         public CardView cv;
         public TextView textView;
         public TextView recipeDescView;
         public ImageView recipeImageView;
-        public RecipeViewHolder(CardView v) {
+        public OnItemClickListener mListener;
+        public RecipeViewHolder(CardView v, OnItemClickListener listener) {
             super(v);
 
             textView = v.findViewById(R.id.recipe_name);
             recipeDescView = v.findViewById(R.id.recipe_description);
             recipeImageView = v.findViewById(R.id.recipe_image);
 
-            v.setOnClickListener(new CardView.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "You Clicked!", Toast.LENGTH_SHORT).show();
-                }
-            });
+            mListener = listener;
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            mListener.onClick(view, getAdapterPosition());
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecipeAdapter(ArrayList<Recipe> myDataset) {
+    public RecipeAdapter(ArrayList<Recipe> myDataset, OnItemClickListener listener) {
+        mListener = listener;
         mDataset = myDataset;
     }
 
@@ -55,7 +65,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         CardView v = (CardView) LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.recipe_cards, parent, false);
 
-        RecipeViewHolder vh = new RecipeViewHolder(v);
+        RecipeViewHolder vh = new RecipeViewHolder(v, mListener);
         return vh;
     }
 
@@ -68,6 +78,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         holder.textView.setText(recipe.getmRecipeName());
         holder.recipeDescView.setText(recipe.getmRecipeDescription());
         holder.recipeImageView.setImageResource(recipe.getmImageName());
+
 
     }
 

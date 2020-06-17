@@ -1,6 +1,5 @@
 package com.alexbaily.kitchenhelper;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -29,7 +28,7 @@ public class MainActivity extends FragmentActivity {
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
         transaction = fm.beginTransaction();
         if (fragment == null) {
-            fragment = new RecipeFragment();
+            fragment = new RecipeListFragment();
             transaction.add(R.id.fragment_container, fragment);
             transaction.commit();
 
