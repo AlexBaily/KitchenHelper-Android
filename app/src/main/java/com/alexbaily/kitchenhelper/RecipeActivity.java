@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 public class RecipeActivity extends Activity {
 
     public TextView mRecipeNameTextView;
+    public TextView mRecipeDescTextView;
     public ImageView mRecipeImageView;
     public Recipe mRecipe;
 
@@ -30,6 +31,9 @@ public class RecipeActivity extends Activity {
 
         mRecipeImageView = findViewById(R.id.act_recipe_image);
         mRecipeImageView.setImageResource(mRecipe.getmImageName());
+
+        mRecipeDescTextView = findViewById(R.id.act_recipe_desc);
+        mRecipeDescTextView.setText(mRecipe.getmRecipeDescription());
     }
 
 }
