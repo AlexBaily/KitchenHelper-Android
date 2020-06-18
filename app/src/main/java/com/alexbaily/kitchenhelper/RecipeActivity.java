@@ -2,15 +2,11 @@ package com.alexbaily.kitchenhelper;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class RecipeActivity extends Activity {
 
@@ -19,10 +15,14 @@ public class RecipeActivity extends Activity {
     public ImageView mRecipeImageView;
     public Recipe mRecipe;
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recipe_fragment);
+        setContentView(R.layout.activity_recipe);
 
         mRecipe = (Recipe) getIntent().getSerializableExtra("EXTRA_RECIPE");
 
@@ -34,6 +34,22 @@ public class RecipeActivity extends Activity {
 
         mRecipeDescTextView = findViewById(R.id.act_recipe_desc);
         mRecipeDescTextView.setText(mRecipe.getmRecipeDescription());
+
+
+
+
+        recyclerView = (RecyclerView) findViewById(R.id.ingredient_recycler_view);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        mAdapter = new IngredientAdapter(mRecipe.getmIngredientList());
+        recyclerView.setAdapter(mAdapter);
     }
 
 }

@@ -45,6 +45,22 @@
                 android:textStyle="italic"
                 android:text="Test" />
 
+            <TextView
+                android:id="@+id/ingredient_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/act_recipe_desc"
+                android:textSize="24sp"
+                android:paddingBottom="10dip"
+                android:text="@string/ing_header"/>
+
+            <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/ingredient_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ingredient_header">
+            </androidx.recyclerview.widget.RecyclerView>
+
 
 
         </RelativeLayout>

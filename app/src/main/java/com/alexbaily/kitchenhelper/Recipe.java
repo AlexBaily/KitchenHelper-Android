@@ -12,8 +12,9 @@ public class Recipe implements Serializable {
     private String mRecipeName;
     private String mRecipeDescription;
     private int mImageName;
-    private ArrayList<Ingredient> mRecipeList;
+    private ArrayList<Ingredient> mIngredientList;
     private ArrayList<RecipeStep> mRecipeSteps;
+
 
 
     public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, int mImageName) {
@@ -21,12 +22,12 @@ public class Recipe implements Serializable {
         this.mRecipeName = mRecipeName;
         this.mImageName = mImageName;
         this.mRecipeDescription = mRecipeDescription;
-        this.mRecipeList = new ArrayList<Ingredient>();
+        this.mIngredientList = new ArrayList<Ingredient>();
         this.mRecipeSteps = new ArrayList<RecipeStep>();
     }
 
     public void AddIngredient(Ingredient ingredient) {
-        mRecipeList.add(ingredient);
+        mIngredientList.add(ingredient);
     }
 
     public void AddRecipeStep(RecipeStep recipeStep) {
@@ -34,7 +35,7 @@ public class Recipe implements Serializable {
     }
 
     public void RemoveIngredient(Ingredient ingredient) {
-        mRecipeList.remove(ingredient);
+        mIngredientList.remove(ingredient);
     }
 
     public void RemoveRecipeStep(RecipeStep recipeStep) {
@@ -55,6 +56,10 @@ public class Recipe implements Serializable {
 
     public void setmRecipeDescription(String mRecipeDescription) {
         this.mRecipeDescription = mRecipeDescription;
+    }
+
+    public ArrayList<Ingredient> getmIngredientList() {
+        return mIngredientList;
     }
 
     public int getmImageName() {

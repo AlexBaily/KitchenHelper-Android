@@ -50,6 +50,14 @@ public class RecipeListFragment extends Fragment  {
         newRecipe2.AddIngredient(newIngredient2);
         mUser.AddRecipe(newRecipe2);
 
+        for (int i = 0; i < 10; i++) {
+            newIngredient = new Ingredient(0, "Bread Flour", "12", "ounces");
+            newIngredient2 = new Ingredient(1, "unsalted butter", "8", "ounces");
+            newRecipe = new Recipe(i, "Cookies" + i, "Declicious Cookies" + 1, R.drawable.cookies);
+            newRecipe.AddIngredient(newIngredient);
+            mUser.AddRecipe(newRecipe);
+        }
+
         //RecyclerView//
 
         recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
