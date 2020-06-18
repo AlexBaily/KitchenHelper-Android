@@ -23,13 +23,15 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.In
     // you provide access to all the views for a data item in a view holder
     public static class IngredientViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView textView;
+        public TextView ingredientNameView;
+        public TextView ingredientAmountView;
 
         public Ingredient ingredient;
         public IngredientViewHolder(LinearLayout v) {
             super(v);
 
-            textView = v.findViewById(R.id.ingredient);
+            ingredientNameView = v.findViewById(R.id.ingredient_name);
+            ingredientAmountView = v.findViewById(R.id.ingredient_amount);
         }
 
     }
@@ -59,7 +61,8 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.In
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         Ingredient ingredient = mDataset.get(position);
-        holder.textView.setText(ingredient.getIngredientText());
+        holder.ingredientNameView.setText(ingredient.getmIngredientName());
+        holder.ingredientAmountView.setText(ingredient.getIngredientAmount());
 
 
 

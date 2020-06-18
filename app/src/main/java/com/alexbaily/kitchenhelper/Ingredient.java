@@ -52,4 +52,8 @@ public class Ingredient implements Serializable {
     public String getIngredientText(){
         return mIngredientName + " " + mIngredientQuantity + mIngredientMeasurement;
     }
+
+    public String getIngredientAmount(){
+        return mIngredientQuantity + mIngredientMeasurement;
+    }
 }

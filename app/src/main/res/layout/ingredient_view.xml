@@ -5,9 +5,22 @@
     android:orientation="vertical"
     android:id="@+id/ingredient_recycler_layout"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ingredient_name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ingredient" />
+        android:gravity="right"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/ingredient_name"
+        android:id="@+id/ingredient_amount"/>
+
+    </RelativeLayout>
 </LinearLayout>
