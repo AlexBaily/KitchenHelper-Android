@@ -1,7 +1,9 @@
 package com.alexbaily.kitchenhelper;
 
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
     private int mIngredientId;
     private String mIngredientName;
     private String mIngredientQuantity;
@@ -49,5 +51,9 @@ public class Ingredient {
 
     public String getIngredientText(){
         return mIngredientName + " " + mIngredientQuantity + mIngredientMeasurement;
+    }
+
+    public String getIngredientAmount(){
+        return mIngredientQuantity + mIngredientMeasurement;
     }
 }
