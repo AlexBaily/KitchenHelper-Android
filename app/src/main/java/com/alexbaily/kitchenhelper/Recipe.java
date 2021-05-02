@@ -11,16 +11,16 @@ public class Recipe implements Serializable {
     private int mRecipeId;
     private String mRecipeName;
     private String mRecipeDescription;
-    private int mImageName;
+    private String mImageUrl;
     private ArrayList<Ingredient> mIngredientList;
     private ArrayList<RecipeStep> mRecipeSteps;
 
 
 
-    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, int mImageName) {
+    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, String mImageUrl) {
         this.mRecipeId = mRecipeId;
         this.mRecipeName = mRecipeName;
-        this.mImageName = mImageName;
+        this.mImageUrl = mImageUrl;
         this.mRecipeDescription = mRecipeDescription;
         this.mIngredientList = new ArrayList<Ingredient>();
         this.mRecipeSteps = new ArrayList<RecipeStep>();
