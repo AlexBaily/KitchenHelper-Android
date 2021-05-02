@@ -27,6 +27,16 @@ public class Recipe implements Serializable {
         this.mRecipeSteps = new ArrayList<RecipeStep>();
     }
 
+    //Constructor for loading from backend.
+    public Recipe(int mRecipeId, String mRecipeName, String mRecipeDescription, String mImageUrl) {
+        this.mRecipeId = mRecipeId;
+        this.mRecipeName = mRecipeName;
+        this.mImageUrl = mImageUrl;
+        this.mRecipeDescription = mRecipeDescription;
+        this.mIngredientList = new ArrayList<Ingredient>();
+        this.mRecipeSteps = new ArrayList<RecipeStep>();
+    }
+
     public void AddIngredient(Ingredient ingredient) {
         mIngredientList.add(ingredient);
     }
